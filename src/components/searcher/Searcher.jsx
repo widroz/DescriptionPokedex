@@ -1,7 +1,5 @@
 import { React, useState, useEffect } from 'react'
 import Description from '../modes/description/Description';
-import Sprites from '../modes/sprites/Sprites';
-import Stats from '../modes/soon/Soon';
 import { searcherBasicStyle } from './SearcherStyles';
 import Soon from '../modes/soon/Soon';
 

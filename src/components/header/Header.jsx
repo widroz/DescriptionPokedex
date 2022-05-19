@@ -1,6 +1,4 @@
-import React from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { React, useEffect, useState  } from 'react'
 import GameDropdown from '../settings/game/GameDropdown'
 import LanguageDropdown from '../settings/language/LanguageDropdown'
 import ModeDropdown from '../settings/mode/ModeDropdown'

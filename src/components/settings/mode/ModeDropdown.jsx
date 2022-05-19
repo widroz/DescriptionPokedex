@@ -1,6 +1,5 @@
 import React from 'react'
-import { useEffect } from 'react'
-import {dropdownBasic, dropdownDark, dropdownWhite} from '../../style/DropdownStyles'
+import { dropdownWhite } from '../../style/DropdownStyles'
 
 
 export default function ModeDropdown({setCurrentMode, currentLanguage, currentGame}) {
