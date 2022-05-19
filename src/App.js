@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { useState } from "react";
+import Header from "./components/header/Header";
+import Searcher from "./components/searcher/Searcher";
+import Bootstrap from "./components/style/Bootstrap";
 
 function App() {
+
+  const [currentGame, setCurrentGame] = useState("");
+  const [currentLanguage, setCurrentLanguage] = useState("");
+  const [result, setResult] = useState('');
+  const [currentMode, setCurrentMode] = useState('');
+
+  useEffect(() => {
+    console.log("Current mode: " + currentMode)
+}
+, [currentMode])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <Bootstrap/>
+      <Header currentMode={currentMode} setCurrentLanguage={setCurrentLanguage} currentGame={currentGame} currentLanguage={currentLanguage} setCurrentGame={setCurrentGame} setCurrentMode={setCurrentMode}></Header>
+      <Searcher currentGame={currentGame} currentLanguage={currentLanguage} result={result} setResult={setResult} currentMode={currentMode}></Searcher>
+      
     </div>
   );
 }

@@ -1,0 +1,41 @@
+article {
+    background: linear-gradient(
+      to right, 
+      rgb(0, 0, 0), 
+      rgb(105, 105, 105)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 10vmin;
+    line-height: 1.1;
+  }
+  
+  body {
+    background: hsl(204 100% 5%);
+    box-sizing: border-box;
+    display: grid;
+    place-content: center;
+    font-family: system-ui;
+  }
+  
+  h1, p, body {
+    margin: 0;
+  }
+  
+  p {
+    font-family: "Dank Mono", ui-monospace, monospace;
+  }
+  
+
+option {
+  font-family: "Dank Mono", ui-monospace, monospace;
+}
+
+select {
+  font-family: "Dank Mono", ui-monospace, monospace;
+}
+
