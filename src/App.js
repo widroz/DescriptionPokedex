@@ -3,7 +3,7 @@ import { useState } from "react";
 import Header from "./components/header/Header";
 import Searcher from "./components/searcher/Searcher";
 import Bootstrap from "./components/style/Bootstrap";
-
+import './styles.css'
 function App() {
 
   const [currentGame, setCurrentGame] = useState("");
