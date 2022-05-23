@@ -10,7 +10,7 @@ export default function ModeDropdown({setCurrentMode, currentLanguage, currentGa
 
     const modeList = [
         'Description 📖',
-        'About... 👀'
+        'About'
     ]
 
     const handleChange = (e) => {

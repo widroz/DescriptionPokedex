@@ -7,7 +7,7 @@ import './styles.css'
 function App() {
 
   const [currentGame, setCurrentGame] = useState("");
-  const [currentLanguage, setCurrentLanguage] = useState("");
+  const [currentLanguage, setCurrentLanguage] = useState("en");
   const [result, setResult] = useState('');
   const [currentMode, setCurrentMode] = useState('');
 
@@ -15,6 +15,10 @@ function App() {
     console.log("Current mode: " + currentMode)
 }
 , [currentMode])
+
+  useEffect(() => {
+    if(currentGame!== 'X ❌' && currentGame!=='Y ✅')setCurrentLanguage("en")
+  }, [currentGame])
 
   return (
     <div >

@@ -1,6 +1,6 @@
 import { useEffect,useState, React } from 'react';
 import {  dropdownWhite } from '../../style/DropdownStyles';
-import { removeAfterSpace } from './LanguageUtils';
+import { removeAfterSpace, showLanguageWithEmoji } from './LanguageUtils';
 
 export default function LanguageDropdown({currentGame, setCurrentLanguage}) {
 
@@ -28,18 +28,17 @@ export default function LanguageDropdown({currentGame, setCurrentLanguage}) {
         }
     }
 
-
     useEffect(() => {
       getLanguageList()
     }, [currentGame]);  
 
     return (
-      <div >{currentGame
+      <div >{currentGame === 'X ❌' || currentGame === 'Y ✅'
       ?
       <select style={{width:'300px'}} className={dropdownWhite} onChange={(e) => setCurrentLanguage(e.target.value)}>
       <option value="">Choose a language {WORLD_EMOJI}</option>
         {languageList.map((language, index) => {
-          return <option key={index} value={language}>{language}</option>
+          return <option key={index} value={language}>{showLanguageWithEmoji(language)}</option>
         }
         )}
       </select>

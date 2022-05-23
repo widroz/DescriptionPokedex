@@ -3,13 +3,12 @@ import React from 'react'
 export default function Soon() {
 
   return (
-    <div>
-    <p className="my-4">· Current features ✅:</p>
-    <p className="my-1">English descriptions of every game's Pokédex.</p>
-    <p className="my-1">All language descriptions for Pokémon X and Y.</p>
-    <p className="my-1">(PokeAPI does not support the other game's translations).</p>
-    <p className="my-4">· Under development features 👀:</p>
-    <p className="my-1">More modes like : Sprites, Growth Type...</p>
+    <div className="my-4">
+    <b className="my-4">· Current features ✅:</b>
+    <p className="my-1">English Pokédex descriptions.</p>
+    <p className="my-1">All languages for Pokémon X/Y.</p>
+    <b >· Under development features 👀:</b>
+    <p className="my-1">More modes: Sprites, Growth Type...</p>
     </div>
   )
 }

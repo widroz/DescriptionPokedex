@@ -51,7 +51,7 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
         switch (currentMode) {
             case 'Description 📖':
                 return <Description search={search} specie={result} currentLanguage={currentLanguage} currentGame={currentGame} />
-            case 'About... 👀':
+            case 'About':
                 return <Soon></Soon>
             default:
                 return <div></div>

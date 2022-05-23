@@ -1,6 +1,6 @@
   h1{
-    font-size: 10vmin;
     line-height: 1.1;
+    font-weight: normal;
   }
   
   body {
@@ -28,3 +28,18 @@ select {
   font-family: "Dank Mono", ui-monospace, monospace;
 }
 
+span{
+  font-weight: 600;
+  
+}
+
+.light-title {
+  font-size: calc(2.5rem + 1vw);
+  font-weight: 100;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.color-o{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #c50000;
+}

@@ -10,9 +10,6 @@ export default function Header({ setCurrentLanguage, currentGame, setCurrentGame
     const [showDropdowns, setShowDropdowns] = useState(true)
 
 
-    const PLUS_EMOJI = '➕'
-    
-
     const toggleDropdowns = () => {
         setShowDropdowns(!showDropdowns)
     }
@@ -23,32 +20,15 @@ export default function Header({ setCurrentLanguage, currentGame, setCurrentGame
     }, [currentGame, currentLanguage, currentMode])
 
 
-    function renderStateDescription() {
-        if (currentGame && currentLanguage && currentMode) {
-            return (
-                <div style={{ display: 'flex', flexDirection: 'row', justifyContent:'center', alignItems:'center'}} >
-                    <button className="btn btn-ínfo" className="btn btn-info" onClick={toggleDropdowns}>Settings {PLUS_EMOJI}</button>
-                    
-                </div>
-            )
-        }
-        else {
-            return <div></div>
-        }
-    }
+
 
 
     return (
-        <div className="my-4" style={{ display: 'flex', flexDirection: 'column' , alignItems: 'center' }}>
+        <div className="my-3" style={{ display: 'flex', flexDirection: 'column' , alignItems: 'center' }}>
             <Title />
-
-            {!showDropdowns
-                ? renderStateDescription()
-                : <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <GameDropdown setCurrentLanguage={setCurrentLanguage} currentGame={currentGame} setCurrentGame={setCurrentGame} />
                 <LanguageDropdown setCurrentLanguage={setCurrentLanguage} currentGame={currentGame} currentLanguage={currentLanguage} />
                 <ModeDropdown currentGame={currentGame} setCurrentMode={setCurrentMode} currentLanguage={currentLanguage}></ModeDropdown>
-            </div>}
 
         </div>
     )
