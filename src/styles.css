@@ -34,7 +34,7 @@ span{
 }
 
 .light-title {
-  font-size: calc(2.5rem + 1vw);
+  font-size: calc(1rem + 6vw);
   font-weight: 100;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
