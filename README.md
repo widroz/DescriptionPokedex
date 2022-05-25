@@ -1,6 +1,6 @@
 # [Description Pokédex](https://widroz.github.io/DescriptionPokedex/)
 
-This React app allows user to search a Pokémon and read its entry in a specific game.
+This React app allows user to look for a certain Pokémon and read its entry in a specific game.
 
 ![Example](https://github.com/widroz/DescriptionPokedex/blob/master/public/example.gif)
 
