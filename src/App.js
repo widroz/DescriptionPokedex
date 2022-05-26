@@ -24,7 +24,7 @@ function App() {
 
 
   return (
-    <div >
+    <div>
       <Bootstrap />
       <Header currentMode={currentMode} setCurrentLanguage={setCurrentLanguage} currentGame={currentGame} currentLanguage={currentLanguage} setCurrentGame={setCurrentGame} setCurrentMode={setCurrentMode}></Header>
       <Searcher currentGame={currentGame} currentLanguage={currentLanguage} result={result} setResult={setResult} currentMode={currentMode}></Searcher>

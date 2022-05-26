@@ -8,7 +8,7 @@ import Title from './Title'
 export default function Header({ setCurrentLanguage, currentGame, setCurrentGame, setCurrentMode, currentLanguage, currentMode }) {
 
     return (
-        <div className="my-3 header">
+        <div className="my-1 header">
             <Title />
             <GameDropdown setCurrentLanguage={setCurrentLanguage} currentGame={currentGame} setCurrentGame={setCurrentGame} />
             <LanguageDropdown setCurrentLanguage={setCurrentLanguage} currentGame={currentGame} currentLanguage={currentLanguage} />

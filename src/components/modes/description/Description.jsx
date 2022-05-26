@@ -50,7 +50,7 @@ export default function Description({ specie, currentLanguage, currentGame, sear
       {currentDescription && officialArtworkURL && specie
         ? <div className="description-div">
 
-          <img className="my-2" src={officialArtworkURL} alt={specie.name} style={{ maxWidth: '60%' }} />
+          <img src={officialArtworkURL} alt={specie.name} style={{ maxWidth: '60%' }} />
 
           <div style={{ maxWidth: '70%' }}>
             <p>{currentDescription}</p>
