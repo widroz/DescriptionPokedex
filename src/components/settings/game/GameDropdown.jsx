@@ -13,7 +13,7 @@ export default function GameDropdown({ setCurrentGame }) {
 
     return (
         <select style={{ width: '300px' }} className={dropdownRed} onChange={handleChange} >
-            <option>First, select a game {GAME_EMOJI}</option>
+            <option hidden>First, select a game {GAME_EMOJI}</option>
             {POKEMON_GAME_LIST.map((game, index) => {
                 return <option key={index} value={game}>{game}</option>
             }

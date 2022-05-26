@@ -38,7 +38,7 @@ export default function LanguageDropdown({ currentGame, setCurrentLanguage }) {
     <div >{currentGame === 'X ❌' || currentGame === 'Y ✅'
       ?
       <select style={{ width: '300px' }} className={dropdownDark} onChange={(e) => setCurrentLanguage(e.target.value)}>
-        <option>Choose a language {WORLD_EMOJI}</option>
+        <option hidden>Choose a language {WORLD_EMOJI}</option>
         {languageList.map((language, index) => {
           return <option key={index} value={language}>{showLanguageWithEmoji(language)}</option>
         }

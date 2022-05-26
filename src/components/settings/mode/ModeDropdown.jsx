@@ -19,8 +19,9 @@ export default function ModeDropdown({ setCurrentMode, currentLanguage, currentG
 
     return (
         <div>{currentLanguage && currentGame
+            
             ? <select style={{ width: '300px' }} className={dropdownLight} onChange={handleChange}>
-                <option>Select a search mode {MODE_EMOJI}</option>
+                <option hidden>Select a search mode {MODE_EMOJI}</option>
                 {modeList.map((mode, index) => {
                     return <option key={index} value={mode}>{mode}</option>
                 }
