@@ -10,9 +10,6 @@ export default function Header({ setCurrentLanguage, currentGame, setCurrentGame
     const [showDropdowns, setShowDropdowns] = useState(true)
 
 
-    const toggleDropdowns = () => {
-        setShowDropdowns(!showDropdowns)
-    }
 
     useEffect(() => {
         if (currentGame && currentLanguage && currentMode) { setShowDropdowns(false) }

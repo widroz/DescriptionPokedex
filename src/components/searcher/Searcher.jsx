@@ -15,9 +15,9 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
     }
 
     const handleSubmit = (e) => {
-        if(currentMode!=='About... 👀'){
-        e.preventDefault();
-        setSearch(temporalSearch.toLowerCase());
+        if (currentMode !== 'About... 👀') {
+            e.preventDefault();
+            setSearch(temporalSearch.toLowerCase());
         }
     }
 
@@ -37,7 +37,7 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
                         setResult(data)
                     }
                     )
-                    .catch(error => {console.log("Invalid search"); setResult("")});
+                    .catch(error => { console.log("Invalid search"); setResult("") });
             }
         }
 
@@ -54,18 +54,18 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
             case 'About':
                 return <Soon></Soon>
             default:
-                return <div></div>
+                return <></>
         }
     }
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <form onSubmit={handleSubmit} style={searcherBasicStyle}>
-                <input type="text" className="form-control" id="search" placeholder="Search" value={temporalSearch} onChange={handleChange} onKeyPress={handleKeyPress} />
-                <button type="submit" className="btn"     onClick={handleSubmit}>{SEARCH_EMOJI}</button>
-
-            </form>
-
+            {currentGame && currentLanguage && currentMode && currentMode!=='About'
+                ? <form onSubmit={handleSubmit} style={searcherBasicStyle}>
+                    <input type="text" className="form-control" id="search" placeholder="Search" value={temporalSearch} onChange={handleChange} onKeyPress={handleKeyPress} />
+                    <button type="submit" className="btn" onClick={handleSubmit}>{SEARCH_EMOJI}</button>
+                </form>
+                : <></>}
             <div>
                 {renderSwitch()}
             </div>
