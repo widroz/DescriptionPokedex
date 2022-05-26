@@ -7,7 +7,6 @@ export function removeAfterSpace(text) {
 
 export function showLanguageWithEmoji(language) {
 
-
     switch (language) {
         case "en":
             return "English 🇺🇸";

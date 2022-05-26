@@ -1,6 +1,5 @@
 import { React, useState, useEffect } from 'react'
 import Description from '../modes/description/Description';
-import { searcherBasicStyle } from './SearcherStyles';
 import Soon from '../modes/soon/Soon';
 
 export default function Searcher({ result, setResult, currentMode, currentGame, currentLanguage }) {
@@ -47,7 +46,8 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
         getResult()
     }, [search]);
 
-    function renderSwitch() {
+    function renderSwitchMode() {
+        //Gets the current mode and renders the corresponding component.
         switch (currentMode) {
             case 'Description 📖':
                 return <Description search={search} specie={result} currentLanguage={currentLanguage} currentGame={currentGame} />
@@ -59,16 +59,20 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
     }
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            {currentGame && currentLanguage && currentMode && currentMode!=='About'
-                ? <form onSubmit={handleSubmit} style={searcherBasicStyle}>
+        <div className="search-div">
+            {currentGame && currentLanguage && currentMode && currentMode !== 'About'
+
+                ? <form className="search-input" onSubmit={handleSubmit}>
                     <input type="text" className="form-control" id="search" placeholder="Search" value={temporalSearch} onChange={handleChange} onKeyPress={handleKeyPress} />
                     <button type="submit" className="btn" onClick={handleSubmit}>{SEARCH_EMOJI}</button>
                 </form>
+
                 : <></>}
+
             <div>
-                {renderSwitch()}
+                {renderSwitchMode()}
             </div>
+
         </div>
     )
 

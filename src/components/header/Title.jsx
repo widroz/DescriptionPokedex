@@ -1,10 +1,11 @@
 import React from 'react'
 
-
 export default function Title() {
   return (
-  <p  style={{display:'flex', flexDirection:'row'}} className="light-title">
-    <span>MEGA</span>POKÉ<p className="color-o">DEX</p>
-  </p>
+    <p className="title">
+      <span>MEGA</span>
+      POKÉ
+      <p className="color-dex text text-danger">DEX</p>
+    </p>
   )
 }

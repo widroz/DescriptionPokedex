@@ -12,6 +12,7 @@ export default function Description({ specie, currentLanguage, currentGame, sear
   const CRYING_EMOJI = '😭'
 
   function replaceBadChars(str) {
+    //In first generation games, this special character should be replaced by a space.
     return str.replace("", ' ');
   }
 
@@ -28,41 +29,45 @@ export default function Description({ specie, currentLanguage, currentGame, sear
           else {
             setCurrentDescription(specie.name.charAt(0).toUpperCase() + specie.name.slice(1) + " has no description in Pokémon " + removeAfterSpace(currentGame) + " " + CRYING_EMOJI);
           }
-
         }
         )
         .catch(error => console.log(error));
     }
     else {
-      setCurrentDescription('Could not find a Pokémon called '+ search);
+      setCurrentDescription('Could not find a Pokémon called ' + search);
     }
   }
 
   useEffect(() => {
+    //Each time language, game, specie or search changes, get the description and official artwork.
     getDescription();
     setOfficialArtworkURL(BASE_ARTWORK_URL + specie.id + ARTWORK_EXTENSION)
   }, [currentLanguage, currentGame, specie, search])
 
 
   return (
-    <div>{currentDescription && officialArtworkURL && specie
-      ? <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-        <img className="my-2" src={officialArtworkURL} alt={specie.name} style={{ maxWidth: '60%' }} />
-        <div style={{ maxWidth: '70%' }}>
+    <div>
+      {currentDescription && officialArtworkURL && specie
+        ? <div className="description-div">
 
-          <p>{currentDescription}</p>
-          <figcaption className="blockquote-footer">
-            {specie.name.toUpperCase()},
-            {}
-            <cite title="Source Title"> Pokémon {removeAfterSpace(currentGame)} ({currentLanguage.toUpperCase()})</cite>
-          </figcaption>
+          <img className="my-2" src={officialArtworkURL} alt={specie.name} style={{ maxWidth: '60%' }} />
+
+          <div style={{ maxWidth: '70%' }}>
+            <p>{currentDescription}</p>
+            <figcaption className="blockquote-footer">
+              {specie.name.toUpperCase()},
+              <cite title="Source Title"> Pokémon {removeAfterSpace(currentGame)} ({currentLanguage.toUpperCase()})</cite>
+            </figcaption>
+          </div>
 
         </div>
-      </div>
-      : search===""
-      ?<p></p>
-      :<p>{currentDescription}</p>
-    }</div>
+
+
+        : search === ""
+          ? <p></p>
+          : <p  className="description-not-found my-4 mx-4">{currentDescription}</p>
+
+      }</div>
   )
 }
 

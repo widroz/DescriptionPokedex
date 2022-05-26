@@ -1,12 +1,11 @@
 import React from 'react'
-import { dropdownWhite } from '../../style/DropdownStyles'
+import { dropdownLight } from '../../style/DropdownStyles'
 
 
-export default function ModeDropdown({setCurrentMode, currentLanguage, currentGame}) {
+export default function ModeDropdown({ setCurrentMode, currentLanguage, currentGame }) {
 
     //emoji of change mode
     const MODE_EMOJI = '🔄'
-    
 
     const modeList = [
         'Description 📖',
@@ -18,17 +17,16 @@ export default function ModeDropdown({setCurrentMode, currentLanguage, currentGa
     }
 
 
-
     return (
         <div>{currentLanguage && currentGame
-            ?<select style={{width:'300px'}} className={dropdownWhite} onChange={handleChange}>
-                <option value="">Select a search mode {MODE_EMOJI}</option>
+            ? <select style={{ width: '300px' }} className={dropdownLight} onChange={handleChange}>
+                <option>Select a search mode {MODE_EMOJI}</option>
                 {modeList.map((mode, index) => {
                     return <option key={index} value={mode}>{mode}</option>
                 }
                 )}
             </select>
-            :<div></div>}
+            : <div></div>}
         </div>
     )
 
