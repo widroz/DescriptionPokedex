@@ -65,7 +65,7 @@ export default function Description({ specie, currentLanguage, currentGame, sear
 
         : search === ""
           ? <p></p>
-          : <p  className="description-not-found my-4 mx-4">{currentDescription}</p>
+          : <p  className="description-not-found my-4 mx-5">{currentDescription}</p>
 
       }</div>
   )
