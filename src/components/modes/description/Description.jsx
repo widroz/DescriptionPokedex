@@ -50,9 +50,9 @@ export default function Description({ specie, currentLanguage, currentGame, sear
       {currentDescription && officialArtworkURL && specie
         ? <div className="description-div">
 
-          <img src={officialArtworkURL} alt={specie.name} style={{ maxWidth: '60%' }} />
+          <img src={officialArtworkURL} alt={specie.name} style={{ maxWidth: '90%' }} />
 
-          <div style={{ maxWidth: '70%' }}>
+          <div style={{ maxWidth: '80%' }}>
             <p>{currentDescription}</p>
             <figcaption className="blockquote-footer">
               {specie.name.toUpperCase()},
