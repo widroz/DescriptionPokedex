@@ -11,4 +11,6 @@ Descriptions in Italian, Korean, Japanese, German, Spanish and French are also a
 # New: Autocomplete!!
 An autocomplete for search input has been added. Currently working on style and improvements on its functionality.
 
+![Example Autocomplete](https://github.com/widroz/DescriptionPokedex/blob/AutcompleteAngolia/public/AutocompleteExample.gif)
+
 
