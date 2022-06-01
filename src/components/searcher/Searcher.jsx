@@ -1,13 +1,19 @@
+import { useRef } from 'react';
 import { React, useState, useEffect } from 'react'
 import Description from '../modes/description/Description';
 import Soon from '../modes/soon/Soon';
+import { getWord } from './getWord';
+import { useSearchBox } from 'react-instantsearch-hooks';
+import Autocomplete from './Autocomplete';
 
 export default function Searcher({ result, setResult, currentMode, currentGame, currentLanguage }) {
 
     const [temporalSearch, setTemporalSearch] = useState('');
     const [search, setSearch] = useState('');
-
+    const [showAutoComplete, setShowAutoComplete] = useState(false);
     const SEARCH_EMOJI = '🔍';
+    const inputRef = useRef();
+    const {refine} = useSearchBox()
 
     const handleChange = (e) => {
         setTemporalSearch(e.target.value);
@@ -20,9 +26,23 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
         }
     }
 
+    const handleKeyUp = () => {
+        const { value, selectionEnd = 0 } = inputRef.current;
+        const { word } = getWord(value, selectionEnd);
+        const shouldOpenAutocomplete = word.length > 0;
+        setShowAutoComplete(shouldOpenAutocomplete);
+        shouldOpenAutocomplete && refine(word);
+    }
+
+    const handleSelection = (word) => {
+        setSearch(word);
+        setShowAutoComplete(false);
+    }
+
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             handleSubmit(e);
+            showAutoComplete(false)
         }
     }
 
@@ -60,13 +80,19 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
 
     return (
         <div className="search-div">
-            {currentGame && currentLanguage && currentMode && currentMode !== 'About'
+            {currentGame && currentLanguage && currentMode && currentMode !== 'About' 
 
-                ? <form className="search-input" onSubmit={handleSubmit}>
-                    <input type="text" className="form-control" id="search" placeholder="Search" value={temporalSearch} onChange={handleChange} onKeyPress={handleKeyPress} />
+                ? <div><form className="search-input" onSubmit={handleSubmit}>
+
+                    <input ref={inputRef} type="text" className="form-control" id="search" placeholder="Search" value={temporalSearch} onChange={handleChange} onKeyPress={handleKeyPress} onKeyUp={handleKeyUp}/>
                     <button type="submit" className="btn" onClick={handleSubmit}>{SEARCH_EMOJI}</button>
                 </form>
-
+                {showAutoComplete
+                &&<Autocomplete handleSelection={handleSelection}></Autocomplete>
+                }
+                </div>
+                
+                
                 : <></>}
 
             <div>

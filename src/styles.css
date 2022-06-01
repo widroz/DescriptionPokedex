@@ -73,3 +73,42 @@ span{
   align-items: center;
   justify-content: center;
 }
+
+
+.autocomplete{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+
+  
+}
+
+.element-autocomplete{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 300px;
+  font-family: "Dank Mono", ui-monospace, monospace;
+  border-bottom: 1px solid #bbb;
+
+
+}
+
+.element-autocomplete:hover{
+  background: #f8f9fa;
+}
+
+.poke-icon{
+  margin: 0.5rem;
+  margin-right: 1rem;
+}
+
+.arrow-icon{
+font-size: 1rem;
+display:flex;
+flex-direction: row;
+justify-self: flex-start;
+}
