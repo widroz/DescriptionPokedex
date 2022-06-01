@@ -6,5 +6,9 @@ This React app allows user to look for a certain Pokémon and read its entry in 
 
 Descriptions and official artwork are fetched from [PokéAPI](https://pokeapi.co/) and they are available in English for every "Main" Pokémon Game.
 Descriptions in Italian, Korean, Japanese, German, Spanish and French are also available in API for versions X and Y, so they are included.
+(Future modes: stats, growth type, moves, specific game sprites...)
 
-(Currently working on future modes: stats, growth type, moves, specific game sprites...)
+#New: Autocomplete!!
+An autocomplete for search input has been added. Currently working on style and improvements on its functionality.
+
+
