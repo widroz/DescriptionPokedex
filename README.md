@@ -8,7 +8,7 @@ Descriptions and official artwork are fetched from [PokéAPI](https://pokeapi.co
 Descriptions in Italian, Korean, Japanese, German, Spanish and French are also available in API for versions X and Y, so they are included.
 (Future modes: stats, growth type, moves, specific game sprites...)
 
-#New: Autocomplete!!
+# New: Autocomplete!!
 An autocomplete for search input has been added. Currently working on style and improvements on its functionality.
 
 
