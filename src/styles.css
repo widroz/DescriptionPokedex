@@ -154,7 +154,7 @@ justify-self: flex-start;
 }
 
 .pokemon-name-title{
-  font-size: calc(3rem + 1vw);
+  font-size: calc(2rem + 2vw);
   font-family: "Dank Mono", ui-monospace, monospace;
   display:flex;
   flex-direction: row;
@@ -168,7 +168,6 @@ justify-self: flex-start;
   margin-bottom:2rem;
   margin-top:2rem;
 }
-
 
 
 

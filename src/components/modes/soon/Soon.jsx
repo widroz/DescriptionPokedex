@@ -7,6 +7,8 @@ export default function Soon() {
       <b className="my-4">· Current features ✅:</b>
       <p className="my-1">English Pokédex descriptions.</p>
       <p className="my-1">All languages for Pokémon X/Y.</p>
+      <p className="my-1"><b>NEW:</b> Autocomplete for search bar!</p>
+      <p className="my-1"><b>NEW:</b> Pokémon types!</p>
       <b >· Under development features 👀:</b>
       <p className="my-1">More modes: Sprites, Growth Type...</p>
     </div>
