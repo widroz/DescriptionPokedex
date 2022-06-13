@@ -189,3 +189,11 @@ justify-self: flex-start;
   margin-right: 0.75rem;
   margin-left: 0.75rem;
 }
+
+.increment-decrement-div{
+  font-family: "Dank Mono", ui-monospace, monospace;
+}
+
+.btn{
+  text-transform: capitalize;
+}

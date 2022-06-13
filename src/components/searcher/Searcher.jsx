@@ -12,6 +12,9 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
     const [temporalSearch, setTemporalSearch] = useState('');
     const [search, setSearch] = useState('');
     const [showAutoComplete, setShowAutoComplete] = useState(false);
+    const [nextPokemon, setNextPokemon] = useState('');
+    const [previousPokemon, setPreviousPokemon] = useState('');
+
     const SEARCH_EMOJI = '🔍';
     const inputRef = useRef();
     const {refine} = useSearchBox()
@@ -57,8 +60,9 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
                         setResult(data)
                     }
                     )
-                    .catch(error => { console.log("Invalid search"); setResult("") });
+                    .catch(error => { console.log("Invalid search"); setResult("") });        
             }
+            
         }
         if (currentMode === "Types 🍃🔥💧") {
 
@@ -79,6 +83,27 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
         getResult()
     }, [search]);
 
+    useEffect(() => {
+        if (result){
+            //fetch the next and previous pokemon
+            fetch(`https://pokeapi.co/api/v2/pokemon/${result.id + 1}`)
+                .then(response => response.json())
+                .then(data => {
+                    setNextPokemon(data)
+                }
+                )
+                .catch(error => { console.log("Invalid search"); setNextPokemon("") });
+            fetch(`https://pokeapi.co/api/v2/pokemon/${result.id - 1}`)
+                .then(response => response.json())
+                .then(data => {
+                    setPreviousPokemon(data)
+                }
+                )
+                .catch(error => { console.log("Invalid search"); setPreviousPokemon("") });
+        }
+    }
+    , [result]);
+
     function renderSwitchMode() {
         //Gets the current mode and renders the corresponding component.
         switch (currentMode) {
@@ -92,6 +117,17 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
                 return <></>
         }
     }
+
+    //A const that increments the search
+    const incrementSearch = () => {
+        setSearch(result.id + 1);
+    }
+
+    //A const that decrements the search
+    const decrementSearch = () => {
+        setSearch(result.id - 1);
+    }
+
 
     return (
         <div className="search-div">
@@ -109,11 +145,16 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
                 
                 
                 : <></>}
-
+               
             <div>
                 {renderSwitchMode()}
             </div>
 
+                {result && previousPokemon && nextPokemon &&
+                <div className="increment-decrement-div">
+                <button className="btn btn-light" onClick={decrementSearch}>⬅️ {previousPokemon.name}</button>
+                <button className="btn btn-light" onClick={incrementSearch}>{nextPokemon.name} ➡️</button>
+                </div>}
         </div>
     )
 
