@@ -5,6 +5,7 @@ import Soon from '../modes/soon/Soon';
 import { getWord } from './getWord';
 import { useSearchBox } from 'react-instantsearch-hooks';
 import Autocomplete from './Autocomplete';
+import Types from '../modes/types/Types';
 
 export default function Searcher({ result, setResult, currentMode, currentGame, currentLanguage }) {
 
@@ -59,6 +60,18 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
                     .catch(error => { console.log("Invalid search"); setResult("") });
             }
         }
+        if (currentMode === "Types 🍃🔥💧") {
+
+            if (search !== '') {
+                fetch(`https://pokeapi.co/api/v2/pokemon/` + search)
+                    .then(response => response.json())
+                    .then(data => {
+                        setResult(data)
+                    }
+                    )
+                    .catch(error => { console.log("Invalid search"); setResult("") });
+            }
+        }
 
     }
 
@@ -73,6 +86,8 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
                 return <Description search={search} specie={result} currentLanguage={currentLanguage} currentGame={currentGame} />
             case 'About':
                 return <Soon></Soon>
+            case 'Types 🍃🔥💧':
+                return <Types search={search} specie={result} />
             default:
                 return <></>
         }

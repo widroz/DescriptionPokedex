@@ -9,6 +9,7 @@ export default function ModeDropdown({ setCurrentMode, currentLanguage, currentG
 
     const modeList = [
         'Description 📖',
+        'Types 🍃🔥💧',
         'About'
     ]
 

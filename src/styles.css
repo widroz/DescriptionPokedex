@@ -112,3 +112,81 @@ display:flex;
 flex-direction: row;
 justify-self: flex-start;
 }
+
+.type-icon {
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 1rem;
+  animation-name: type-anim;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes type-anim {
+  0%{
+    filter: saturate(80%);
+    transform: scale(1);
+
+  }
+50%{
+  filter: saturate(200%);
+  transform: scale(1.2);
+}
+100%{
+  filter: saturate(80%);
+  transform: scale(1);
+
+}
+}
+
+.type-icon img {
+  height: 60%;
+  width: 60%;
+
+}
+
+.types-div{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pokemon-name-title{
+  font-size: calc(3rem + 1vw);
+  font-family: "Dank Mono", ui-monospace, monospace;
+  display:flex;
+  flex-direction: row;
+}
+
+.types-title{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom:2rem;
+  margin-top:2rem;
+}
+
+
+
+
+
+
+.type-mode-div{
+  text-transform: capitalize; 
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.type{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+}
