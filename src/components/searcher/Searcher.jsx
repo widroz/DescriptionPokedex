@@ -27,6 +27,8 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
         if (currentMode !== 'About... 👀') {
             e.preventDefault();
             setSearch(temporalSearch.toLowerCase());
+            setTemporalSearch('');
+            setShowAutoComplete(false);
         }
     }
 
@@ -46,7 +48,7 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             handleSubmit(e);
-            showAutoComplete(false)
+            setShowAutoComplete(false)
         }
     }
 
@@ -152,8 +154,11 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
 
                 {result && previousPokemon && nextPokemon &&
                 <div className="increment-decrement-div">
-                <button className="btn btn-light" onClick={decrementSearch}>⬅️ {previousPokemon.name}</button>
-                <button className="btn btn-light" onClick={incrementSearch}>{nextPokemon.name} ➡️</button>
+                <button className="btn" onClick={decrementSearch}>
+                    <p>⬅️</p>
+                <p>{previousPokemon.name}</p>
+                </button>
+                <button className="btn" onClick={incrementSearch}><p>➡️</p><p>{nextPokemon.name}</p></button>
                 </div>}
         </div>
     )

@@ -81,8 +81,6 @@ span{
   align-items: center;
   justify-content: center;
   width: 300px;
-
-  
 }
 
 .element-autocomplete{
@@ -179,6 +177,8 @@ justify-self: flex-start;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  width:300px;
 }
 
 .type{
@@ -192,8 +192,15 @@ justify-self: flex-start;
 
 .increment-decrement-div{
   font-family: "Dank Mono", ui-monospace, monospace;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .btn{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-transform: capitalize;
+  width:150px;
 }

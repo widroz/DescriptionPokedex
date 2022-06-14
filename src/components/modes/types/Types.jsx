@@ -18,8 +18,6 @@ export default function Types({ search, specie }) {
     }
     useEffect(() => {
         if (specie) {
-            console.log("Object type: ", currentTypes);
-            console.log("Number of Types: ", specie.types.length);
             setCurrentTypes([]);
             setPastTypes([]);
             setPastTypesLastGeneration("generation-viii");
