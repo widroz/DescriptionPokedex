@@ -83,7 +83,7 @@ export default function Searcher({ result, setResult, currentMode, currentGame, 
 
     useEffect(() => {
         getResult()
-    }, [search]);
+    }, [search,currentMode]);
 
     useEffect(() => {
         if (result){

@@ -17,7 +17,7 @@ export default function Types({ search, specie }) {
         else return false
     }
     useEffect(() => {
-        if (specie) {
+        if (specie && specie.types) {
             setCurrentTypes([]);
             setPastTypes([]);
             setPastTypesLastGeneration("generation-viii");
